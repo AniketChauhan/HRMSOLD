@@ -1,0 +1,42 @@
+﻿@model HRMS.Models.HRMS_EMP_DESIGNATION_MS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HRMS_EMP_DESIGNATION_MS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation_Parent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation_Parent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation_ShortName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation_ShortName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Designation_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

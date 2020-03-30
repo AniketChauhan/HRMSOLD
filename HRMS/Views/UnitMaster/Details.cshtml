@@ -1,0 +1,90 @@
+﻿@model HRMS.Models.UnitMaster
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>UnitMaster</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pincode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pincode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Priority)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Priority)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PaySlip)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PaySlip)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.State)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.State)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UnitCode }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

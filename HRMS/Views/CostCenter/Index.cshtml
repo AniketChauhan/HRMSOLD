@@ -1,0 +1,72 @@
+﻿@model IEnumerable<HRMS.Models.HRMS_COST_CENTER>
+
+@{
+    ViewBag.Title = "Cost Center";
+}
+
+<h2>Cost Center</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@if (Model.Count<HRMS.Models.HRMS_COST_CENTER>() > 0 && Model != null)
+{
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost_Cntr_Code)
+            </th>
+            <th >
+                @Html.DisplayNameFor(model => model.Cost_Cntr_Name)
+            </th>
+
+            <th><i class="glyphicon glyphicon-wrench" style="font-size:large"> </i> Operations</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr id="@item.ID">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cost_Cntr_Code)
+                </td>
+                <td >
+                    @Html.DisplayFor(modelItem => item.Cost_Cntr_Name)
+                </td>
+
+                <td>
+                    @Html.ActionLink(" Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-primary btn-sm glyphicon glyphicon-edit" }) |
+                    @Html.ActionLink(" Details", "Details", new { id = item.ID }, new { @class = "btn btn-warning btn-sm glyphicon glyphicon-edit" }) |
+                    <button class="btn btn-danger  btn-sm " onclick="return removeFromList(this, '@item.ID') "> <i class="glyphicon glyphicon-trash"> </i> Delete</button>
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+else
+{
+    <div class="container">
+        <h2 class="text-center text-primary">sorry!!! We don't have any Cost Center Data Right Now...</h2>
+    </div>
+}
+<script>
+    function removeFromList(thisobj, id) {
+        if (confirm("Are you sure?") == true) {
+            var data = JSON.stringify({
+                'id': id
+            });
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                url: "@Url.Action("delete","CostCenter")",
+                datatype: "json",
+                data: data,
+                success: function (response) {
+                    var tr = $(thisobj).closest("tr");
+                    $(tr).remove();
+                }
+            });
+        }
+    }
+</script>

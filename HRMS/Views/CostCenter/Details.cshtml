@@ -1,0 +1,50 @@
+﻿@model HRMS.Models.HRMS_COST_CENTER
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cost Center</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost_Cntr_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost_Cntr_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost_Cntr_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost_Cntr_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parent_Cost_Cntr_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parent_Cost_Cntr_Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ledger_Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ledger_Code)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("CostList", "Index")
+</p>

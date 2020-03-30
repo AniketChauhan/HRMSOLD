@@ -1,0 +1,50 @@
+﻿@model HRMS.Models.HRMS_ATTACHMENT_TYPE
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>HRMS_ATTACHMENT_TYPE</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Attachment_Type_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Attachment_Type_Name, new { htmlAttributes = new { @class = "form-control", @maxlength = "50" ,@placeholder = "insert please" } })
+                @Html.ValidationMessageFor(model => model.Attachment_Type_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-success btn-sm" />
+            </div>
+        </div>
+    </div>
+}
+@if (ViewBag.Attachment_status != null)
+{
+    <div class="alert alert-success alert-dismissible " style="width:50%;">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <span>
+            @ViewBag.Attachment_status
+        </span>
+    </div>
+}
+
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

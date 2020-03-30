@@ -1,0 +1,43 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<HRMS.Models.ReligionMaster>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-responsive table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ReligionShortName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().ReligionName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReligionShortName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReligionName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ReligionID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ReligionID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ReligionID })
+            </td>
+        </tr>
+    }
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true })

@@ -1,0 +1,75 @@
+﻿@model IEnumerable<HRMS.Models.HRMS_CATEGORY_GRADE>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@if (Model.Count<HRMS.Models.HRMS_CATEGORY_GRADE>() > 0 && Model != null)
+{
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Category_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grade_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grade_Detail)
+            </th>
+            <th><i class="glyphicon glyphicon-wrench" style="font-size:large"> </i> Operations</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grade_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Grade_Detail)
+                </td>
+                <td>
+                    @Html.ActionLink(" Edit", "Edit", new { id = item.Category_ID }, new { @class = "btn btn-primary btn-sm glyphicon glyphicon-edit" }) |
+                    <button class="btn btn-danger  btn-sm " onclick="return removeFromList(this, '@item.Category_ID') "> <i class="glyphicon glyphicon-trash"> </i> Delete</button>
+                </td>
+            </tr>
+        }
+
+    </table>
+}
+else
+{
+    <div class="container">
+        <h2 class="text-center text-primary">sorry!!! We don't have any Grade Data Right Now...</h2>
+    </div>
+}
+<script>
+    function removeFromList(thisobj, id) {
+        if (confirm("Are you sure?") == true) {
+            var data = JSON.stringify({
+                'id': id
+            });
+            $.ajax({
+                type: "POST",
+                contentType: "application/json",
+                url: "@Url.Action("delete","CategoryGrade")",
+                datatype: "json",
+                data: data,
+                success: function (response) {
+                    var tr = $(thisobj).closest("tr");
+                    $(tr).remove();
+                }
+            });
+        }
+    }
+</script>

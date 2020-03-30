@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c5b3dad1de51442480c85fd450b354b9" Name="Diagram1">
+        <EntityTypeShape EntityType="HRMSModel.HRMS_ATTACHMENT_TYPE" Width="1.5" PointX="9.875" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRMSModel.HRMS_CATEGORY_GRADE" Width="1.5" PointX="6.125" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRMSModel.HRMS_SALUTATION" Width="1.5" PointX="8" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRMSModel.HRMS_COST_CENTER" Width="1.5" PointX="11.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="HRMSModel.HRMS_DEPT" Width="1.5" PointX="4.25" PointY="0.5" />
+        <EntityTypeShape EntityType="HRMSModel.CastMaster" Width="1.5" PointX="3" PointY="7.875" />
+        <EntityTypeShape EntityType="HRMSModel.City" Width="1.5" PointX="5.25" PointY="5" />
+        <EntityTypeShape EntityType="HRMSModel.Country" Width="1.5" PointX="0.75" PointY="5.125" />
+        <EntityTypeShape EntityType="HRMSModel.HRMS_EMP_BUSINESSDIVISION_MS" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HRMSModel.HRMS_EMP_CITIZENSHIP_MS" Width="1.5" PointX="7.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HRMSModel.HRMS_EMP_DESIGNATION_MS" Width="1.5" PointX="5.75" PointY="7.75" />
+        <EntityTypeShape EntityType="HRMSModel.HRMS_EMP_GENDER_MS" Width="1.5" PointX="7.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HRMSModel.MaritalMaster" Width="1.5" PointX="9.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HRMSModel.PayRollMaster" Width="1.5" PointX="9.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HRMSModel.ReligionMaster" Width="1.5" PointX="0.75" PointY="7.875" />
+        <EntityTypeShape EntityType="HRMSModel.SegmentMaster" Width="1.5" PointX="7.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HRMSModel.State" Width="1.5" PointX="3" PointY="4.875" />
+        <EntityTypeShape EntityType="HRMSModel.UnitMaster" Width="1.5" PointX="9.75" PointY="9.75" />
+        <EntityTypeShape EntityType="HRMSModel.WorkLocationMaster" Width="1.5" PointX="0.75" PointY="10.75" />
+        <AssociationConnector Association="HRMSModel.FK_CastMaster_ReligionMaster" />
+        <AssociationConnector Association="HRMSModel.FK_City_State" />
+        <AssociationConnector Association="HRMSModel.FK_State_Country" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

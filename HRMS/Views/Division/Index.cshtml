@@ -1,0 +1,41 @@
+﻿@model IEnumerable<HRMS.Models.HRMS_EMP_BUSINESSDIVISION_MS>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BusinessDivision_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BusinessDivision_SapCode)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusinessDivision_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BusinessDivision_SapCode)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BusinessDivision_ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BusinessDivision_ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BusinessDivision_ID })
+            </td>
+        </tr>
+    }
+
+</table>

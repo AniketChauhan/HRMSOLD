@@ -1,0 +1,26 @@
+﻿@model HRMS.Models.HRMS_EMP_GENDER_MS
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HRMS_EMP_GENDER_MS</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender_Value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender_Value)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Gender_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title H.R.M.S.</title>
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" href="~/Content/w3.css" type="text/css" />
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="w3-bar w3-indigo w3-card-2">
+        @Html.ActionLink("H.R.M.S", "Index", "CostCenter", new { area = "" }, new { @class = "w3-bar-item w3-button w3-mobile" })
+        <div class="w3-dropdown-hover">
+            <button class="w3-button  w3-indigo">Master Pages <i class="glyphicon glyphicon-chevron-down"> </i></button>
+            <div class="w3-dropdown-content w3-center w3-bar-block w3-card-4">
+                <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-euro"> </i>
+                    @Html.ActionLink("Cost Center", "Index", "CostCenter", new { area = "" }, new { @class = " " })
+                </div>
+
+                <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-list-alt"> </i>
+                    @Html.ActionLink("Category & Grades", "Index", "CategoryGrade", new { area = "" }, new { @class = " " })
+                </div>
+                <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-tint"> </i>
+                    @Html.ActionLink("Department", "Index", "Department", new { area = "" }, new { @class = " " })
+                </div>
+                <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-gift"> </i>
+                    @Html.ActionLink("Salutation", "Index", "SALUTATION", new { area = "" }, new { @class = " " })
+                </div>
+                <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-file"> </i>
+                    @Html.ActionLink("Attachments", "Index", "Attachment", new { area = "" }, new { @class = " " })
+                </div>
+
+
+                <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-tint"> </i>
+                    @Html.ActionLink("Cast", "Index", "CastMaster", new { area = "" }, new { @class = " " })
+                </div>   <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-leaf"> </i>
+                    @Html.ActionLink("MaritalStatus", "Index", "MaritalMasters", new { area = "" }, new { @class = " " })
+                </div>   <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-briefcase"> </i>
+                    @Html.ActionLink("PayRoll", "Index", "PayRollMaster", new { area = "" }, new { @class = " " })
+                </div>   <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-knight"> </i>
+                    @Html.ActionLink("Religion", "Index", "ReligionMaster", new { area = "" }, new { @class = " " })
+                </div>   <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-lamp"> </i>
+                    @Html.ActionLink("Segment", "Index", "SegmentMaster", new { area = "" }, new { @class = " " })
+                </div>   <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-grain"> </i>
+                    @Html.ActionLink("Unit", "Index", "UnitMaster", new { area = "" }, new { @class = " " })
+                </div>   <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-map-marker"> </i>
+                    @Html.ActionLink("WorkLocation", "Index", "WorkLocationMaster", new { area = "" }, new { @class = " " })
+                </div>
+
+                <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-map-marker"> </i>
+                    @Html.ActionLink("Division", "Index", "Division", new { area = "" }, new { @class = " " })
+                </div>
+                <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-map-marker"> </i>
+                    @Html.ActionLink("CitizenShip", "Index", "CitizenShip", new { area = "" }, new { @class = " " })
+                </div>
+                <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-map-marker"> </i>
+                    @Html.ActionLink("Designation", "Index", "Designation", new { area = "" }, new { @class = " " })
+                </div>   <div class="w3-bar-item w3-button w3-mobile">
+                    <i class="glyphicon glyphicon-map-marker"> </i>
+                    @Html.ActionLink("Gender", "Index", "Gender", new { area = "" }, new { @class = " " })
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

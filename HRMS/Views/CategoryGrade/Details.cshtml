@@ -1,0 +1,42 @@
+﻿@model HRMS.Models.HRMS_CATEGORY_GRADE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HRMS_CATEGORY_GRADE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grade_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grade_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grade_Detail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grade_Detail)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Category_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

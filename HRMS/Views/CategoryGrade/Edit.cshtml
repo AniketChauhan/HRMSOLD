@@ -1,0 +1,73 @@
+﻿@model HRMS.Models.HRMS_CATEGORY_GRADE
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Update</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Category And Grade</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Category_ID)
+
+        <div class="form-group">
+            <span class="col-md-2 control-label">
+                <i class="glyphicon glyphicon-asterisk" style="color:red ; font-size:x-small;"></i>
+                @Html.LabelFor(model => model.Category_Name)
+            </span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Category_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Category_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="col-md-2 control-label">
+                <i class=" glyphicon glyphicon-asterisk" style="color:red ; font-size:x-small;"></i>
+                @Html.LabelFor(model => model.Grade_Name)
+            </span>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Grade_Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Grade_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Grade_Detail, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Grade_Detail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Grade_Detail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+@if (ViewBag.Grade_Status != null)
+{
+    <div class="alert alert-success alert-dismissible " style="width:50%;">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        <span>
+            @ViewBag.Grade_Status
+        </span>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

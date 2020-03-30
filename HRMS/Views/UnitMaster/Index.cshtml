@@ -1,0 +1,130 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@model IPagedList<HRMS.Models.UnitMaster>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<br />
+<div class="form-inline">
+
+    @using (Html.BeginForm("Index", "UnitMaster", FormMethod.Get))
+    {
+        <table class="col-md-4">
+            <tr>
+                <th>
+                    @Html.DropDownList("Data", new List<SelectListItem>
+                           {
+                           new SelectListItem{ Text="Unit Name", Value = "1" },
+                           new SelectListItem{ Text="Country", Value = "2" },
+                           new SelectListItem{ Text="City", Value = "3" },
+
+                           }, "--Select--")
+
+                </th>
+                <th>
+
+                    @Html.TextBox("Search")
+                </th>
+                <th>
+
+                    <input type="submit" value="Search" class="form-control" />
+                </th>
+            </tr>
+        </table>
+    }
+
+</div>
+<br>
+<br>
+<br>
+<table class="table table-bordered table-striped table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.First().UnitName)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.First().Address)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.First().Country)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First().City)
+        </th>
+        @*<th>
+                @Html.DisplayNameFor(model => model.First().Pincode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().Priority)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().PaySlip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.First().IsActive)
+            </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.First().State)
+        </th>
+        <th></th>
+    </tr>
+
+    @if (Model.Count() <= 0)
+    {
+        @Html.Label("No Record Found")
+
+
+    }
+    else
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UnitName)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Address)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.City)
+                </td>
+                @*<td>
+                        @Html.DisplayFor(modelItem => item.Pincode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Priority)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PaySlip)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsActive)
+                    </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.State)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.UnitCode }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.UnitCode }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.UnitCode })
+                </td>
+            </tr>
+        }
+
+
+    }
+
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page, Search = Request.QueryString["Search"], Data = Request.QueryString["Data"] }), new PagedListRenderOptions() { Display = PagedListDisplayMode.IfNeeded, DisplayPageCountAndCurrentLocation = true })

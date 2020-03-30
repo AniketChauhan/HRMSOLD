@@ -1,0 +1,26 @@
+﻿@model HRMS.Models.HRMS_ATTACHMENT_TYPE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HRMS_ATTACHMENT_TYPE</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Attachment_Type_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Attachment_Type_Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Attachment_Type_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

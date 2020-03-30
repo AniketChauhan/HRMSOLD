@@ -1,0 +1,75 @@
+﻿@model dynamic
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm("Create", "HRMS_EMP_DESIGNATION_MS", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    List<HRMS.Models.HRMS_EMP_DESIGNATION_MS> c = Model.list1;
+    HRMS.Models.HRMS_EMP_DESIGNATION_MS m = Model.data;
+
+
+    <div class="form-horizontal">
+        <h4>HRMS_EMP_DESIGNATION_MS</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => m.Designation_Parent, "Designation_Parent", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <select name="D_parent">
+
+                    @foreach (var i in c)
+                    {
+
+
+                        <option value="@i.Designation_Name">@i.Designation_Name</option>
+
+                    }
+
+
+                </select>
+
+                @*@Html.DropDownList("Designation_Parent", null, htmlAttributes: new { @class = "form-control", @Name = "D_parent" })*@
+                @*@Html.EditorFor(model => model.Designation_Parent, new { htmlAttributes = new { @class = "form-control", @Name = "D_parent" } })*@
+                @Html.ValidationMessageFor(model => m.Designation_Parent, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => m.Designation_ShortName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+                @Html.EditorFor(model => m.Designation_ShortName, new { htmlAttributes = new { @class = "form-control", @Name = "D_shortname" } })
+                @Html.ValidationMessageFor(model => m.Designation_ShortName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => m.Designation_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => m.Designation_Name, new { htmlAttributes = new { @class = "form-control", @Name = "D_name" } })
+                @Html.ValidationMessageFor(model => m.Designation_Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+<h3>@ViewBag.message</h3>
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

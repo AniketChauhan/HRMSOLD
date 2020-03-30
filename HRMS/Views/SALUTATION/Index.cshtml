@@ -1,0 +1,61 @@
+﻿@model IEnumerable<HRMS.Models.HRMS_SALUTATION>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Salutations</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@if (Model.Count<HRMS.Models.HRMS_SALUTATION>() > 0 && Model != null)
+{
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Salutation_Name)
+            </th>
+            <th><i class="glyphicon glyphicon-wrench"> </i> Operations</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr id="@item.Salutation_ID">
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salutation_Name)
+                </td>
+                <td>
+                    @Html.ActionLink(" Edit", "Edit", new { id = item.Salutation_ID }, new { @class = "btn btn-primary btn-sm glyphicon glyphicon-edit" }) |
+                    <button class="btn btn-danger btn-sm" onclick="return removeFromList(this, '@item.Salutation_ID') "><i class="glyphicon glyphicon-trash"> </i> Delete</button>
+                </td>
+            </tr>
+        }
+
+
+    </table>
+}
+else
+{
+    <div class="container">
+        <h2>sorry!!! We don't have any Salutations Right Now...</h2>
+    </div>
+}
+<script>
+    function removeFromList(thisobj,id) {
+        var data = JSON.stringify({
+            'id': id
+        });
+        $.ajax({
+        type: "POST",
+            contentType: "application/json",
+            url: "@Url.Action("delete","SALUTATION")",
+            datatype: "json",
+            data: data,
+            success: function (response) {
+                    var tr = $(thisobj).closest("tr");
+                    $(tr).remove();
+            }
+        });
+    }
+</script>

@@ -1,0 +1,82 @@
+﻿@model HRMS.Models.HRMS_DEPT
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HRMS_DEPT</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Dept_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dept_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sort_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sort_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Parent_ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Parent_ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreateDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreateDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifyBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifyBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ModifyDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ModifyDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Dept_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
