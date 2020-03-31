@@ -16,7 +16,7 @@ namespace HRMS
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "CastManager", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "CastMaster", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
