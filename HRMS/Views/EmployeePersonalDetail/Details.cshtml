@@ -1,0 +1,194 @@
+﻿@model HRMS.Models.Employee_Personal_Detail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Employee_Personal_Detail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DOB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DOB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentityMark1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdentityMark1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IdentityMark2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IdentityMark2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Race)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Race)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MarraigeDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MarraigeDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfChild)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfChild)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NoOfDependents)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NoOfDependents)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AadharNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AadharNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AKA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AKA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MilitaryService)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MilitaryService)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Hobbies)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hobbies)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MilitaryServiceDetail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MilitaryServiceDetail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmployeeID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmployeeID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CastMaster.CastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CastMaster.CastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HRMS_CATEGORY_GRADE.Category_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HRMS_CATEGORY_GRADE.Category_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HRMS_EMP_CITIZENSHIP_MS.CitizenShip_Country_NM)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HRMS_EMP_CITIZENSHIP_MS.CitizenShip_Country_NM)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HRMS_EMP_GENDER_MS.Gender_Value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HRMS_EMP_GENDER_MS.Gender_Value)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaritalMaster.MaritalName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaritalMaster.MaritalName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReligionMaster.ReligionShortName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReligionMaster.ReligionShortName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

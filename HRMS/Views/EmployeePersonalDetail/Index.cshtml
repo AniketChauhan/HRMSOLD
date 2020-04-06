@@ -1,0 +1,159 @@
+﻿@model IEnumerable<HRMS.Models.Employee_Personal_Detail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdentityMark1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdentityMark2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Race)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MarraigeDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfChild)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NoOfDependents)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AadharNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SIN)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AKA)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MilitaryService)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Note)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hobbies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MilitaryServiceDetail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmployeeID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CastMaster.CastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HRMS_CATEGORY_GRADE.Category_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HRMS_EMP_CITIZENSHIP_MS.CitizenShip_Country_NM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HRMS_EMP_GENDER_MS.Gender_Value)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaritalMaster.MaritalName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReligionMaster.ReligionShortName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DOB)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdentityMark1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdentityMark2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Race)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MarraigeDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfChild)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NoOfDependents)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AadharNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SIN)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AKA)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MilitaryService)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirthCity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Note)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hobbies)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MilitaryServiceDetail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CastMaster.CastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HRMS_CATEGORY_GRADE.Category_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HRMS_EMP_CITIZENSHIP_MS.CitizenShip_Country_NM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HRMS_EMP_GENDER_MS.Gender_Value)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaritalMaster.MaritalName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReligionMaster.ReligionShortName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
+        </td>
+    </tr>
+}
+
+</table>

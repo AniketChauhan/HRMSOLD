@@ -14,7 +14,16 @@ namespace HRMS.Models
     
     public partial class HRMS_EMP_GENDER_MS
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public HRMS_EMP_GENDER_MS()
+        {
+            this.Employee_Personal_Detail = new HashSet<Employee_Personal_Detail>();
+        }
+    
         public long Gender_ID { get; set; }
         public string Gender_Value { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Employee_Personal_Detail> Employee_Personal_Detail { get; set; }
     }
 }
