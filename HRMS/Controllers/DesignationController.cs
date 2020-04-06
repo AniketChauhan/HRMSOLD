@@ -99,12 +99,19 @@ namespace HRMS.Controllers
             }
             else
             {
-                hed.Designation_Parent = Request["D_parent"];
-                hed.Designation_ShortName = Request["D_shortname"];
-                hed.Designation_Name = Request["D_name"];
-                db.HRMS_EMP_DESIGNATION_MS.Add(hed);
-                db.SaveChanges();
-                ViewBag.message = "Added  !!!!!!!";
+                if (D_parent==D_name)
+                {
+                    ViewBag.message = "Not Valid Relationship  !!!!!!!";
+                }
+                else
+                {
+                    hed.Designation_Parent = Request["D_parent"];
+                    hed.Designation_ShortName = Request["D_shortname"];
+                    hed.Designation_Name = Request["D_name"];
+                    db.HRMS_EMP_DESIGNATION_MS.Add(hed);
+                    db.SaveChanges();
+                    ViewBag.message = "Added  !!!!!!!";
+                }
             }
 
 
