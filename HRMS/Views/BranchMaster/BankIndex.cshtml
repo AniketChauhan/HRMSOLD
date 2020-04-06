@@ -1,0 +1,32 @@
+﻿@model IEnumerable<HRMS.Models.BankMaster>
+
+@{
+    ViewBag.Title = "BankIndex";
+}
+
+<h2>BankIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-striped table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BankName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BankName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditBank", new { id = item.BankCode }, new { @class = "btn btn-warning" })
+            </td>
+        </tr>
+    }
+
+</table>

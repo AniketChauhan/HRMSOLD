@@ -5,6 +5,31 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="HRMSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BankMaster">
+          <Key>
+            <PropertyRef Name="BankCode" />
+          </Key>
+          <Property Name="BankCode" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BankName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BranchMaster">
+          <Key>
+            <PropertyRef Name="BranchCode" />
+          </Key>
+          <Property Name="BranchCode" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BankCode" Type="bigint" Nullable="false" />
+          <Property Name="BranchName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MICR_Code" Type="varchar" MaxLength="50" />
+          <Property Name="IFSC_Code" Type="varchar" MaxLength="50" />
+          <Property Name="Contact" Type="bigint" />
+          <Property Name="Fax" Type="varchar" MaxLength="50" />
+          <Property Name="EmailID" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="State" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="50" />
+          <Property Name="PinCode" Type="bigint" />
+        </EntityType>
         <EntityType Name="CastMaster">
           <Key>
             <PropertyRef Name="CastCode" />
@@ -167,6 +192,18 @@
           <Property Name="WorkLocationName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="SAPCode" Type="varchar" MaxLength="50" />
         </EntityType>
+        <Association Name="FK_BranchMaster_BankMaster">
+          <End Role="BankMaster" Type="Self.BankMaster" Multiplicity="1" />
+          <End Role="BranchMaster" Type="Self.BranchMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BankMaster">
+              <PropertyRef Name="BankCode" />
+            </Principal>
+            <Dependent Role="BranchMaster">
+              <PropertyRef Name="BankCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_CastMaster_ReligionMaster">
           <End Role="ReligionMaster" Type="Self.ReligionMaster" Multiplicity="1" />
           <End Role="CastMaster" Type="Self.CastMaster" Multiplicity="*" />
@@ -204,6 +241,8 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="HRMSModelStoreContainer">
+          <EntitySet Name="BankMaster" EntityType="Self.BankMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BranchMaster" EntityType="Self.BranchMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CastMaster" EntityType="Self.CastMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
@@ -223,6 +262,10 @@
           <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="UnitMaster" EntityType="Self.UnitMaster" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WorkLocationMaster" EntityType="Self.WorkLocationMaster" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_BranchMaster_BankMaster" Association="Self.FK_BranchMaster_BankMaster">
+            <End Role="BankMaster" EntitySet="BankMaster" />
+            <End Role="BranchMaster" EntitySet="BranchMaster" />
+          </AssociationSet>
           <AssociationSet Name="FK_CastMaster_ReligionMaster" Association="Self.FK_CastMaster_ReligionMaster">
             <End Role="ReligionMaster" EntitySet="ReligionMaster" />
             <End Role="CastMaster" EntitySet="CastMaster" />
@@ -294,6 +337,12 @@
           <AssociationSet Name="FK_State_Country" Association="HRMSModel.FK_State_Country">
             <End Role="Country" EntitySet="Countries" />
             <End Role="State" EntitySet="States" />
+          </AssociationSet>
+          <EntitySet Name="BankMaster" EntityType="HRMSModel.BankMaster" />
+          <EntitySet Name="BranchMaster" EntityType="HRMSModel.BranchMaster" />
+          <AssociationSet Name="FK_BranchMaster_BankMaster" Association="HRMSModel.FK_BranchMaster_BankMaster">
+            <End Role="BankMaster" EntitySet="BankMaster" />
+            <End Role="BranchMaster" EntitySet="BranchMaster" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="HRMS_COST_CENTER">
@@ -474,6 +523,45 @@
             </Principal>
             <Dependent Role="State">
               <PropertyRef Name="CountryID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="BankMaster">
+          <Key>
+            <PropertyRef Name="BankCode" />
+          </Key>
+          <Property Name="BankCode" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BankName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="BranchMaster" Relationship="HRMSModel.FK_BranchMaster_BankMaster" FromRole="BankMaster" ToRole="BranchMaster" />
+        </EntityType>
+        <EntityType Name="BranchMaster">
+          <Key>
+            <PropertyRef Name="BranchCode" />
+          </Key>
+          <Property Name="BranchCode" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BankCode" Type="Int64" Nullable="false" />
+          <Property Name="BranchName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MICR_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IFSC_Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Contact" Type="Int64" />
+          <Property Name="Fax" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmailID" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PinCode" Type="Int64" />
+          <NavigationProperty Name="BankMaster" Relationship="HRMSModel.FK_BranchMaster_BankMaster" FromRole="BranchMaster" ToRole="BankMaster" />
+        </EntityType>
+        <Association Name="FK_BranchMaster_BankMaster">
+          <End Type="HRMSModel.BankMaster" Role="BankMaster" Multiplicity="1" />
+          <End Type="HRMSModel.BranchMaster" Role="BranchMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BankMaster">
+              <PropertyRef Name="BankCode" />
+            </Principal>
+            <Dependent Role="BranchMaster">
+              <PropertyRef Name="BankCode" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -664,6 +752,33 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="BankMaster">
+            <EntityTypeMapping TypeName="HRMSModel.BankMaster">
+              <MappingFragment StoreEntitySet="BankMaster">
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BranchMaster">
+            <EntityTypeMapping TypeName="HRMSModel.BranchMaster">
+              <MappingFragment StoreEntitySet="BranchMaster">
+                <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="EmailID" ColumnName="EmailID" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Contact" ColumnName="Contact" />
+                <ScalarProperty Name="IFSC_Code" ColumnName="IFSC_Code" />
+                <ScalarProperty Name="MICR_Code" ColumnName="MICR_Code" />
+                <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+                <ScalarProperty Name="BankCode" ColumnName="BankCode" />
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -678,7 +793,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />

@@ -11,13 +11,10 @@ namespace HRMS.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
+    
     public partial class HRMS_EMP_GENDER_MS
     {
         public long Gender_ID { get; set; }
-        [Required]
-        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
-        [Display(Name ="Gender(Male/Female)")]
         public string Gender_Value { get; set; }
     }
 }

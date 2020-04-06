@@ -27,6 +27,9 @@
         <AssociationConnector Association="HRMSModel.FK_CastMaster_ReligionMaster" />
         <AssociationConnector Association="HRMSModel.FK_City_State" />
         <AssociationConnector Association="HRMSModel.FK_State_Country" />
+        <EntityTypeShape EntityType="HRMSModel.BankMaster" Width="1.5" PointX="12.375" PointY="5.125" />
+        <EntityTypeShape EntityType="HRMSModel.BranchMaster" Width="1.5" PointX="14.625" PointY="4" />
+        <AssociationConnector Association="HRMSModel.FK_BranchMaster_BankMaster" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

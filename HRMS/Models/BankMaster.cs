@@ -11,20 +11,23 @@ namespace HRMS.Models
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class ReligionMaster
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+
+    public partial class BankMaster
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ReligionMaster()
+        public BankMaster()
         {
-            this.CastMasters = new HashSet<CastMaster>();
+            this.BranchMaster = new HashSet<BranchMaster>();
         }
     
-        public long ReligionID { get; set; }
-        public string ReligionShortName { get; set; }
-        public string ReligionName { get; set; }
+        public long BankCode { get; set; }
+        [DisplayName("Bank Name")]
+        [Required]
+        public string BankName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CastMaster> CastMasters { get; set; }
+        public virtual ICollection<BranchMaster> BranchMaster { get; set; }
     }
 }

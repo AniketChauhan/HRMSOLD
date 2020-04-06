@@ -133,6 +133,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AttachmentController.cs" />
+    <Compile Include="Controllers\BranchMasterController.cs" />
     <Compile Include="Controllers\CastMasterController.cs" />
     <Compile Include="Controllers\CategoryGradeController.cs" />
     <Compile Include="Controllers\CitizenShipController.cs" />
@@ -150,6 +151,12 @@
     <Compile Include="Controllers\WorkLocationMasterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BankMaster.cs">
+      <DependentUpon>HRMSmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BranchMaster.cs">
+      <DependentUpon>HRMSmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CastMaster.cs">
       <DependentUpon>HRMSmodel.tt</DependentUpon>
@@ -357,6 +364,13 @@
     <Content Include="Views\Gender\Create.cshtml" />
     <Content Include="Views\Gender\Edit.cshtml" />
     <Content Include="Views\Gender\Delete.cshtml" />
+    <Content Include="Views\BranchMaster\Create.cshtml" />
+    <Content Include="Views\BranchMaster\Delete.cshtml" />
+    <Content Include="Views\BranchMaster\Details.cshtml" />
+    <Content Include="Views\BranchMaster\Edit.cshtml" />
+    <Content Include="Views\BranchMaster\Index.cshtml" />
+    <Content Include="Views\BranchMaster\BankIndex.cshtml" />
+    <Content Include="Views\BranchMaster\EditBank.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

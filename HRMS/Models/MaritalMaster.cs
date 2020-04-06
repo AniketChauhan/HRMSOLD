@@ -11,14 +11,10 @@ namespace HRMS.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class MaritalMaster
     {
         public long MaritalID { get; set; }
-        [Required]
-        [Display(Name ="Marital Name")]
-        [RegularExpression(@"^[A-Za-z]+", ErrorMessage = "Only Alphabet values are allowed!")]
         public string MaritalName { get; set; }
     }
 }

@@ -11,14 +11,10 @@ namespace HRMS.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class HRMS_EMP_CITIZENSHIP_MS
     {
         public long CitizenShip_ID { get; set; }
-        [Required]
-        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
-        [Display(Name ="CitizenShip Country")]
         public string CitizenShip_Country_NM { get; set; }
     }
 }

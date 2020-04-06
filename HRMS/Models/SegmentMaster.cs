@@ -11,17 +11,11 @@ namespace HRMS.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class SegmentMaster
     {
         public long SegmentID { get; set; }
-        [Required]
-        [Display(Name ="Segment Name")]
-
         public string SegmentName { get; set; }
-        [Display(Name ="SAP Code")]
-        [RegularExpression(@"^[A-Za-z0-9]+", ErrorMessage = "Only AlphaNumeric values are allowed!")]
         public string SAPCode { get; set; }
     }
 }

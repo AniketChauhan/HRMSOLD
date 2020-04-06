@@ -11,18 +11,11 @@ namespace HRMS.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
-
+    
     public partial class HRMS_EMP_BUSINESSDIVISION_MS
     {
         public long BusinessDivision_ID { get; set; }
-        [Required]
-        [Display(Name ="BusinessDivision Name")]
         public string BusinessDivision_Name { get; set; }
-        [Required]
-        [RegularExpression(@"^[1-9][0-9]{6}$", ErrorMessage = "Sapcode must be in valid format")]
-        [Display(Name ="BusinessDivision SapCode")]
         public Nullable<long> BusinessDivision_SapCode { get; set; }
     }
 }

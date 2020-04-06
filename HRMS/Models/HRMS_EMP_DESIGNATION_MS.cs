@@ -11,21 +11,12 @@ namespace HRMS.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class HRMS_EMP_DESIGNATION_MS
     {
         public long Designation_ID { get; set; }
-        [Display(Name ="Designation Parent")]
-
         public string Designation_Parent { get; set; }
-        [Required]
-        [Display(Name ="Designation ShortName")]
         public string Designation_ShortName { get; set; }
-        [Required]
-
-        [Display(Name ="Designation Name")]
         public string Designation_Name { get; set; }
-
     }
 }

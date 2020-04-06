@@ -11,33 +11,18 @@ namespace HRMS.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class UnitMaster
     {
         public long UnitCode { get; set; }
-        [Required]
-        [Display(Name ="Unit Name")]
         public string UnitName { get; set; }
-        [Required]
         public string Address { get; set; }
-        [Required]
-        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         public string Country { get; set; }
-        [Required]
-        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         public string City { get; set; }
-        [Required]
-        [RegularExpression(@"^[1-9][0-9]{5}$", ErrorMessage = "Pincode must be in valid format")]
         public long Pincode { get; set; }
-        [Required]
-        [Range(1, long.MaxValue, ErrorMessage = "Priority must be greater than 0")]
         public long Priority { get; set; }
-        [Display(Name ="PaySlip View")]
         public bool PaySlip { get; set; }
         public bool IsActive { get; set; }
-        [Required]
-        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
         public string State { get; set; }
     }
 }
