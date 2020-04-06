@@ -46,5 +46,6 @@ namespace HRMS.Models
         public virtual DbSet<WorkLocationMaster> WorkLocationMasters { get; set; }
         public virtual DbSet<BankMaster> BankMaster { get; set; }
         public virtual DbSet<BranchMaster> BranchMaster { get; set; }
+        public virtual DbSet<Employee_Personal_Detail> Employee_Personal_Detail { get; set; }
     }
 }

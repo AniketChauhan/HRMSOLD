@@ -30,6 +30,13 @@
         <EntityTypeShape EntityType="HRMSModel.BankMaster" Width="1.5" PointX="12.375" PointY="5.125" />
         <EntityTypeShape EntityType="HRMSModel.BranchMaster" Width="1.5" PointX="14.625" PointY="4" />
         <AssociationConnector Association="HRMSModel.FK_BranchMaster_BankMaster" />
+        <EntityTypeShape EntityType="HRMSModel.Employee_Personal_Detail" Width="1.5" PointX="17" PointY="1.875" />
+        <AssociationConnector Association="HRMSModel.FK_Employee_Personal_Detail_Employee_Personal_Detail" />
+        <AssociationConnector Association="HRMSModel.FK_Employee_Personal_Detail_HRMS_CATEGORY_GRADE" />
+        <AssociationConnector Association="HRMSModel.FK_Employee_Personal_Detail_HRMS_EMP_CITIZENSHIP_MS" />
+        <AssociationConnector Association="HRMSModel.FK_Employee_Personal_Detail_HRMS_EMP_GENDER_MS" />
+        <AssociationConnector Association="HRMSModel.FK_Employee_Personal_Detail_MaritalMaster" />
+        <AssociationConnector Association="HRMSModel.FK_Employee_Personal_Detail_ReligionMaster" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
