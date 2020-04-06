@@ -1,0 +1,52 @@
+﻿@model IEnumerable<HRMS.Models.HRMS_EMP_DESIGNATION_MS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation_Parent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation_ShortName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Designation_Name)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation_ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation_Parent)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation_ShortName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Designation_Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Designation_ID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Designation_ID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Designation_ID })
+            </td>
+        </tr>
+    }
+
+</table>
