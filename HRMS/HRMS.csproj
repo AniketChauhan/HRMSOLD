@@ -198,6 +198,12 @@
     <Compile Include="Models\HRMS_DEPT.cs">
       <DependentUpon>HRMSmodel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\HRMS_EMP_BANK_BRANCH_MS.cs">
+      <DependentUpon>HRMSmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRMS_EMP_BANK_MS.cs">
+      <DependentUpon>HRMSmodel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HRMS_EMP_BUSINESSDIVISION_MS.cs">
       <DependentUpon>HRMSmodel.tt</DependentUpon>
     </Compile>
@@ -207,7 +213,13 @@
     <Compile Include="Models\HRMS_EMP_DESIGNATION_MS.cs">
       <DependentUpon>HRMSmodel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\HRMS_Emp_Details.cs">
+      <DependentUpon>HRMSmodel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\HRMS_EMP_GENDER_MS.cs">
+      <DependentUpon>HRMSmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRMS_EMP_PHOTO_SIGN.cs">
       <DependentUpon>HRMSmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HRMS_SALUTATION.cs">

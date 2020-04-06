@@ -12,26 +12,18 @@ namespace HRMS.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class UnitMaster
+    public partial class HRMS_EMP_BANK_MS
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public UnitMaster()
+        public HRMS_EMP_BANK_MS()
         {
-            this.HRMS_Emp_Details = new HashSet<HRMS_Emp_Details>();
+            this.HRMS_EMP_BANK_BRANCH_MS = new HashSet<HRMS_EMP_BANK_BRANCH_MS>();
         }
     
-        public long UnitCode { get; set; }
-        public string UnitName { get; set; }
-        public string Address { get; set; }
-        public string Country { get; set; }
-        public string City { get; set; }
-        public long Pincode { get; set; }
-        public long Priority { get; set; }
-        public bool PaySlip { get; set; }
-        public bool IsActive { get; set; }
-        public string State { get; set; }
+        public long Bank_Code { get; set; }
+        public string Bank_Name { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HRMS_Emp_Details> HRMS_Emp_Details { get; set; }
+        public virtual ICollection<HRMS_EMP_BANK_BRANCH_MS> HRMS_EMP_BANK_BRANCH_MS { get; set; }
     }
 }

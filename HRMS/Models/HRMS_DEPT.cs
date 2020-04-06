@@ -14,6 +14,12 @@ namespace HRMS.Models
     
     public partial class HRMS_DEPT
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public HRMS_DEPT()
+        {
+            this.HRMS_Emp_Details = new HashSet<HRMS_Emp_Details>();
+        }
+    
         public long Dept_Id { get; set; }
         public string Dept_Name { get; set; }
         public string Sort_Name { get; set; }
@@ -23,5 +29,8 @@ namespace HRMS.Models
         public Nullable<System.DateTime> CreateDate { get; set; }
         public Nullable<long> ModifyBy { get; set; }
         public Nullable<System.DateTime> ModifyDate { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HRMS_Emp_Details> HRMS_Emp_Details { get; set; }
     }
 }

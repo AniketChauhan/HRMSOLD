@@ -14,7 +14,16 @@ namespace HRMS.Models
     
     public partial class HRMS_SALUTATION
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public HRMS_SALUTATION()
+        {
+            this.HRMS_Emp_Details = new HashSet<HRMS_Emp_Details>();
+        }
+    
         public long Salutation_ID { get; set; }
         public string Salutation_Name { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HRMS_Emp_Details> HRMS_Emp_Details { get; set; }
     }
 }
