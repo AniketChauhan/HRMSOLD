@@ -46,10 +46,8 @@ namespace HRMS.Models
         public virtual DbSet<WorkLocationMaster> WorkLocationMasters { get; set; }
         public virtual DbSet<BankMaster> BankMaster { get; set; }
         public virtual DbSet<BranchMaster> BranchMaster { get; set; }
-        public virtual DbSet<Employee_Personal_Detail> Employee_Personal_Detail { get; set; }
-        public virtual DbSet<HRMS_EMP_BANK_BRANCH_MS> HRMS_EMP_BANK_BRANCH_MS { get; set; }
-        public virtual DbSet<HRMS_EMP_BANK_MS> HRMS_EMP_BANK_MS { get; set; }
         public virtual DbSet<HRMS_Emp_Details> HRMS_Emp_Details { get; set; }
         public virtual DbSet<HRMS_EMP_PHOTO_SIGN> HRMS_EMP_PHOTO_SIGN { get; set; }
+        public virtual DbSet<Employee_Personal_Detail> Employee_Personal_Detail { get; set; }
     }
 }

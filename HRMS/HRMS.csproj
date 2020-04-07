@@ -198,12 +198,6 @@
     <Compile Include="Models\HRMS_DEPT.cs">
       <DependentUpon>HRMSmodel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\HRMS_EMP_BANK_BRANCH_MS.cs">
-      <DependentUpon>HRMSmodel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\HRMS_EMP_BANK_MS.cs">
-      <DependentUpon>HRMSmodel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\HRMS_EMP_BUSINESSDIVISION_MS.cs">
       <DependentUpon>HRMSmodel.tt</DependentUpon>
     </Compile>
