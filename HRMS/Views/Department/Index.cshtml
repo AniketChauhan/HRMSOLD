@@ -1,4 +1,4 @@
-﻿@model IEnumerable<HRMS.Models.HRMS_DEPT>
+﻿@model IEnumerable<HRMS.Models.DepartmentData_Result>
 
 @{
     ViewBag.Title = "Index";
@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-@if (Model.Count<HRMS.Models.HRMS_DEPT>() > 0 && Model != null)
+@if (Model.Count<HRMS.Models.DepartmentData_Result>() > 0 && Model != null)
 {
 
     <table class="table">
@@ -40,7 +40,7 @@
                     @Html.DisplayFor(modelItem => item.Sort_Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Parent_ID)
+                    @Html.DisplayFor(modelItem => item.parentname)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.IsActive)

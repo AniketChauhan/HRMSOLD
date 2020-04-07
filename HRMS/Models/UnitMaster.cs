@@ -14,6 +14,12 @@ namespace HRMS.Models
     
     public partial class UnitMaster
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public UnitMaster()
+        {
+            this.HRMS_Emp_Details = new HashSet<HRMS_Emp_Details>();
+        }
+    
         public long UnitCode { get; set; }
         public string UnitName { get; set; }
         public string Address { get; set; }
@@ -24,5 +30,8 @@ namespace HRMS.Models
         public bool PaySlip { get; set; }
         public bool IsActive { get; set; }
         public string State { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HRMS_Emp_Details> HRMS_Emp_Details { get; set; }
     }
 }

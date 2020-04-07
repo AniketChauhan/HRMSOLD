@@ -1,0 +1,138 @@
+﻿@model HRMS.Models.HRMS_Emp_Details
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>HRMS_Emp_Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Emp_Cd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Cd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Old_Emp_Cd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Old_Emp_Cd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Join_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Join_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Card_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Card_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.First_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Middle_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Middle_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Last_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Last_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Display_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Display_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UAN_No_)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UAN_No_)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HRMS_COST_CENTER.Cost_Cntr_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HRMS_COST_CENTER.Cost_Cntr_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HRMS_DEPT.Dept_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HRMS_DEPT.Dept_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HRMS_EMP_DESIGNATION_MS.Designation_Parent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HRMS_EMP_DESIGNATION_MS.Designation_Parent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HRMS_SALUTATION.Salutation_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HRMS_SALUTATION.Salutation_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnitMaster.UnitName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnitMaster.UnitName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkLocationMaster.WorkLocationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkLocationMaster.WorkLocationName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Emp_ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

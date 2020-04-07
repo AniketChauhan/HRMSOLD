@@ -12,6 +12,8 @@ namespace HRMS.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
+    using System.Data.Entity.Core.Objects;
+    using System.Linq;
     
     public partial class HRMSEntities : DbContext
     {
@@ -46,5 +48,11 @@ namespace HRMS.Models
         public virtual DbSet<WorkLocationMaster> WorkLocationMasters { get; set; }
         public virtual DbSet<BankMaster> BankMaster { get; set; }
         public virtual DbSet<BranchMaster> BranchMaster { get; set; }
+        public virtual DbSet<HRMS_Emp_Details> HRMS_Emp_Details { get; set; }
+    
+        public virtual ObjectResult<DepartmentData_Result> DepartmentData()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<DepartmentData_Result>("DepartmentData");
+        }
     }
 }

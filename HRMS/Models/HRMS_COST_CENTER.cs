@@ -14,10 +14,19 @@ namespace HRMS.Models
     
     public partial class HRMS_COST_CENTER
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public HRMS_COST_CENTER()
+        {
+            this.HRMS_Emp_Details = new HashSet<HRMS_Emp_Details>();
+        }
+    
         public long ID { get; set; }
         public long Cost_Cntr_Code { get; set; }
         public string Cost_Cntr_Name { get; set; }
         public Nullable<long> Parent_Cost_Cntr_Code { get; set; }
         public Nullable<long> Ledger_Code { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HRMS_Emp_Details> HRMS_Emp_Details { get; set; }
     }
 }

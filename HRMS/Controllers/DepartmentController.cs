@@ -17,7 +17,8 @@ namespace HRMS.Controllers
 
         public ActionResult Index()
         {
-            return View(db.HRMS_DEPT.ToList());
+           
+            return View(db.DepartmentData().ToList());
         }
 
         public ActionResult Details(long? id)

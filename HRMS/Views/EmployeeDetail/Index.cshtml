@@ -1,0 +1,117 @@
+﻿@model IEnumerable<HRMS.Models.HRMS_Emp_Details>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Emp_Cd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Old_Emp_Cd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Join_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Card_Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Middle_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Last_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Display_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UAN_No_)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HRMS_COST_CENTER.Cost_Cntr_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HRMS_DEPT.Dept_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HRMS_EMP_DESIGNATION_MS.Designation_Parent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HRMS_SALUTATION.Salutation_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UnitMaster.UnitName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkLocationMaster.WorkLocationName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Emp_Cd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Old_Emp_Cd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Join_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Card_Id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Middle_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Last_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Display_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UAN_No_)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HRMS_COST_CENTER.Cost_Cntr_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HRMS_DEPT.Dept_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HRMS_EMP_DESIGNATION_MS.Designation_Parent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HRMS_SALUTATION.Salutation_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UnitMaster.UnitName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkLocationMaster.WorkLocationName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Emp_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Emp_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Emp_ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -141,6 +141,7 @@
     <Compile Include="Controllers\DepartmentController.cs" />
     <Compile Include="Controllers\DesignationController.cs" />
     <Compile Include="Controllers\DivisionController.cs" />
+    <Compile Include="Controllers\EmployeeDetailController.cs" />
     <Compile Include="Controllers\GenderController.cs" />
     <Compile Include="Controllers\MaritalMasterController.cs" />
     <Compile Include="Controllers\PayRollMasterControllerv.cs" />
@@ -165,6 +166,9 @@
       <DependentUpon>HRMSmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Country.cs">
+      <DependentUpon>HRMSmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DepartmentData_Result.cs">
       <DependentUpon>HRMSmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HRMSmodel.Context.cs">
@@ -201,6 +205,9 @@
       <DependentUpon>HRMSmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HRMS_EMP_DESIGNATION_MS.cs">
+      <DependentUpon>HRMSmodel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HRMS_Emp_Details.cs">
       <DependentUpon>HRMSmodel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\HRMS_EMP_GENDER_MS.cs">
@@ -371,6 +378,11 @@
     <Content Include="Views\BranchMaster\Index.cshtml" />
     <Content Include="Views\BranchMaster\BankIndex.cshtml" />
     <Content Include="Views\BranchMaster\EditBank.cshtml" />
+    <Content Include="Views\EmployeeDetail\Create.cshtml" />
+    <Content Include="Views\EmployeeDetail\Delete.cshtml" />
+    <Content Include="Views\EmployeeDetail\Details.cshtml" />
+    <Content Include="Views\EmployeeDetail\Edit.cshtml" />
+    <Content Include="Views\EmployeeDetail\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
