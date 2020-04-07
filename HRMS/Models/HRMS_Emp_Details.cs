@@ -14,6 +14,12 @@ namespace HRMS.Models
     
     public partial class HRMS_Emp_Details
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public HRMS_Emp_Details()
+        {
+            this.HRMS_EMP_PHOTO_SIGN = new HashSet<HRMS_EMP_PHOTO_SIGN>();
+        }
+    
         public long Emp_ID { get; set; }
         public long Emp_Cd { get; set; }
         public Nullable<long> Old_Emp_Cd { get; set; }
@@ -37,5 +43,7 @@ namespace HRMS.Models
         public virtual HRMS_SALUTATION HRMS_SALUTATION { get; set; }
         public virtual UnitMaster UnitMaster { get; set; }
         public virtual WorkLocationMaster WorkLocationMaster { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HRMS_EMP_PHOTO_SIGN> HRMS_EMP_PHOTO_SIGN { get; set; }
     }
 }

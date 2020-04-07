@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="c5b3dad1de51442480c85fd450b354b9" Name="Diagram1" ZoomLevel="75">
+      <Diagram DiagramId="c5b3dad1de51442480c85fd450b354b9" Name="Diagram1" ZoomLevel="62">
         <EntityTypeShape EntityType="HRMSModel.HRMS_ATTACHMENT_TYPE" Width="1.5" PointX="9.875" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="HRMSModel.HRMS_CATEGORY_GRADE" Width="1.5" PointX="6.125" PointY="0.5" IsExpanded="true" />
         <EntityTypeShape EntityType="HRMSModel.HRMS_SALUTATION" Width="1.5" PointX="8" PointY="0.5" IsExpanded="true" />
@@ -28,16 +28,25 @@
         <AssociationConnector Association="HRMSModel.FK_City_State" />
         <AssociationConnector Association="HRMSModel.FK_State_Country" />
         <EntityTypeShape EntityType="HRMSModel.BankMaster" Width="1.5" PointX="12.375" PointY="5.125" />
-        <EntityTypeShape EntityType="HRMSModel.BranchMaster" PointX="14.625" PointY="4.125" Width="1.5" />
+        <EntityTypeShape EntityType="HRMSModel.BranchMaster" Width="1.5" PointX="14.625" PointY="4" />
         <AssociationConnector Association="HRMSModel.FK_BranchMaster_BankMaster" />
-        <EntityTypeShape EntityType="HRMSModel.HRMS_Emp_Details" Width="1.5" PointX="16.875" PointY="4.125" />
+        <EntityTypeShape EntityType="HRMSModel.HRMS_Emp_Details" Width="1.5" PointX="13.875" PointY="9" />
+        <EntityTypeShape EntityType="HRMSModel.HRMS_EMP_PHOTO_SIGN" Width="1.5" PointX="16.125" PointY="10.75" />
         <AssociationConnector Association="HRMSModel.FK_HRMS_Emp_Details_HRMS_COST_CENTER" />
         <AssociationConnector Association="HRMSModel.FK_HRMS_Emp_Details_HRMS_DEPT" />
         <AssociationConnector Association="HRMSModel.FK_HRMS_Emp_Details_HRMS_EMP_DESIGNATION_MS" />
         <AssociationConnector Association="HRMSModel.FK_HRMS_Emp_Details_HRMS_SALUTATION" />
         <AssociationConnector Association="HRMSModel.FK_HRMS_Emp_Details_UnitMaster" />
         <AssociationConnector Association="HRMSModel.FK_HRMS_Emp_Details_WorkLocationMaster" />
-      </Diagram>
+        <AssociationConnector Association="HRMSModel.FK_HRMS_EMP_PHOTO_SIGN_HRMS_Emp_Details" />
+        <EntityTypeShape EntityType="HRMSModel.Employee_Personal_Detail" Width="1.5" PointX="17" PointY="1.875" />
+        <AssociationConnector Association="HRMSModel.FK_Employee_Personal_Detail_Employee_Personal_Detail" />
+        <AssociationConnector Association="HRMSModel.FK_Employee_Personal_Detail_HRMS_CATEGORY_GRADE" />
+        <AssociationConnector Association="HRMSModel.FK_Employee_Personal_Detail_HRMS_EMP_CITIZENSHIP_MS" />
+        <AssociationConnector Association="HRMSModel.FK_Employee_Personal_Detail_HRMS_EMP_GENDER_MS" />
+        <AssociationConnector Association="HRMSModel.FK_Employee_Personal_Detail_MaritalMaster" />
+        <AssociationConnector Association="HRMSModel.FK_Employee_Personal_Detail_ReligionMaster" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

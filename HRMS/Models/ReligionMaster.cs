@@ -18,6 +18,7 @@ namespace HRMS.Models
         public ReligionMaster()
         {
             this.CastMasters = new HashSet<CastMaster>();
+            this.Employee_Personal_Detail = new HashSet<Employee_Personal_Detail>();
         }
     
         public long ReligionID { get; set; }
@@ -26,5 +27,7 @@ namespace HRMS.Models
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CastMaster> CastMasters { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Employee_Personal_Detail> Employee_Personal_Detail { get; set; }
     }
 }
